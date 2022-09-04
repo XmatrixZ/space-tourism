@@ -1,0 +1,103 @@
+#technology {
+  max-height: 100% !important;
+  background-image: url(../../assets/technology/background-technology-mobile.jpg);
+  background-size: cover;
+}
+
+.grid-container-technology {
+  --flow-space: 2rem;
+  padding: 0;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  width: 100%;
+}
+
+.grid-container-technology > picture {
+  grid-area: image;
+  max-width: 100%;
+  border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+}
+
+.grid-container-technology > .number-indicators {
+  grid-area: tabs;
+  justify-self: auto;
+  --gap: 1rem;
+
+}
+
+.grid-container-technology > .technology-info {
+  grid-area: content;
+  --flow-space: 1rem;
+  justify-self: flex-start;
+}
+.technology-info h2 {
+  opacity: 0.5;
+}
+
+.technology-meta p {
+  font-size: 1.75rem;
+}
+@media (min-width: 35em) {
+  .grid-container-technology {
+    padding-bottom: 0;
+    grid-template-areas:
+      "title"
+      "content"
+      "tabs"
+      "image" !important;
+  }
+  #technology {
+    background-position: center center;
+    background-image: url(../../assets/technology/background-technology-tablet.jpg);
+    background-size: cover;
+    max-width: 100%;
+  }
+  .technology-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .number-indicators {
+    justify-self: start;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 45em) {
+  .grid-container-technology {
+    // padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+    grid-template-columns: minmax(5rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(
+        0rem,
+        0fr
+      );
+    justify-items: start;
+    grid-template-areas:
+      ". title image image"
+      "tabs content image image"
+      ". . . ." !important;
+  }
+  .grid-container-technology > picture {
+    max-width: 100%;
+    max-height: 90%;
+  }
+  .grid-container-technology > .number-indicators {
+    justify-self: center;
+  }
+  .technology-meta {
+    --gap: min(6vw, 6rem);
+    justify-content: start;
+  }
+  // .grid-container-technology > picture {
+  //   align-self: end;
+  // }
+  #technology {
+    background-position: center center;
+    background-image: url(../../assets/technology/background-technology-desktop.jpg);
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+    padding-bottom: 1rem;
+  }
+}

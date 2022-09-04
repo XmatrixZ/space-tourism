@@ -1,0 +1,26 @@
+#home {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: bottom center;
+  background-image: url(../../assets/home/background-home-desktop.jpg);
+}
+@media screen and (min-width: 35em) {
+  #home {
+    background-position: center center;
+    background-image: url(../../assets/home/background-home-tablet.jpg);
+  }
+}
+
+@media screen and (min-width: 45em) {
+  .grid-container-home {
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
+        1fr
+      );
+  }
+  #home {
+    background-image: url(../../assets/home/background-home-desktop.jpg);
+  }
+}

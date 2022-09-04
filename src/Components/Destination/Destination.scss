@@ -1,0 +1,92 @@
+#destination {
+  max-height: 100% !important;
+  background-image: url(../../assets/destination/background-destination-mobile.jpg);
+  background-size: cover;
+}
+.grid-container-destination {
+  --flow-space: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container-destination > picture {
+  grid-area: image;
+  max-width: 56%;
+  object-fit: cover;
+}
+
+.grid-container-destination > .tab-list {
+  grid-area: tabs;
+  justify-self: center;
+  margin-inline: 1rem;
+}
+
+.grid-container-destination > .destination-info {
+  grid-area: content;
+  justify-self: flex-start;
+  margin-inline: 1rem;
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--clr-white) / 0.1);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+.destination-meta p {
+  font-size: 1.75rem;
+}
+
+@media (min-width: 35rem) {
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #destination {
+    background-position: center center;
+    background-image: url(../../assets/destination/background-destination-tablet.jpg);
+    background-size: cover;
+  }
+}
+
+@media (min-width: 45rem) {
+  .grid-container-destination {
+    grid-template-columns: minmax(2rem, 1fr) minmax(0, 30rem) minmax(0, 45rem) minmax(
+        6rem,
+        0fr
+      );
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      "title . tabs ."
+      ". image content content"
+      ". . content content";
+  }
+  .grid-container-destination > picture {
+    max-width: 60%;
+    justify-self: flex-start;
+  }
+  .destination-meta {
+    --gap: min(6vw, 6rem);
+    justify-content: start;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+  .grid-container-destination > .tab-list {
+    justify-self: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .grid-container-destination >  .destination-info{
+    margin: 0rem;
+    padding: 0;
+  }
+  #destination {
+    background-position: center center;
+    background-image: url(../../assets/destination/background-destination-desktop.jpg);
+    background-size: cover;
+  }
+}
